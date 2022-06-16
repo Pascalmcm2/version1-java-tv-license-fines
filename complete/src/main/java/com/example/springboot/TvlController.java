@@ -20,6 +20,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class TvlController {
 
 	@GetMapping("/")
+	public String home() {
+		return "home";
+	}
+
+	@PostMapping("/index")
 	public String index() {
 		return "index";
 	}
