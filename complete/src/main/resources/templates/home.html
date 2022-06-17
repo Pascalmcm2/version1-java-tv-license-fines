@@ -34,6 +34,14 @@
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <a class="navbar-brand" href="/">GOV.UK</a>
+
+      <label for="lang"></label>
+<select name="lang" id="chooser">
+  <option value="eng"onclick="changeLanguage('eng')">English</option>
+  <option value="sp" onclick="changeLanguage('es')">Spanish</option>
+  <option value="fr"onclick="changeLanguage('fr')">French</option>
+</select> 
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -48,21 +56,84 @@
   </header>
 
   <!-- Begin page content -->
-  <main role="main" class="container">
-    <h1 class="mt-5">Pay a TV licence fine</h1>
+  <main role="main" class="container" id="texts">
+   <h2 class="mt-5" ><b id="hd1">Pay a TV Licence fine</b></h2> <br>
+   <p id="tx1">You can pay a TV license fine online or by phone</p> <br>
+  
 
-    <h3 class="mb-3">You can pay a TV license fine online or by phone</h2>
+        <h4 class="mb-3"><b id="hd2">How to pay</b></h4>
+        <p id="tx1">You will need your credit or debit card to pay for the fine </p>
+        <p id="tx1">You must pay the fine x days given your notice of fine, otherwise x</p> <br>
 
-      <h3 class="mb-3">This page is also in spanish</h2>
-
-        <h3 class="mb-3">How to pay</h2>
-          <form method="post" action="/index">
-            <button type="submit" class="btn btn-success border border-dark rounded-0">Pay online</button>
+        <h5><b id="hd3">Online Payment</b> </h5>
      
-        </form>
-  </main>
+        <p id="tx1">You will need to login using your Government Gateway User ID</p>
+        <p id="tx1">Alternatively, you can use your letter id, last name and post code</p>
 
-</div>
+          <form method="post" action="/index">      
+            <button type="submit" class="btn btn-success border border-dark rounded-0" id="btn">Pay online</button>
+          </form>
+            <br>
+
+        <h5 id="hd3"> Other ways to pay</h5>
+        <h6>Call 0300 790 9901 to pay a fine in England</h6>
+        <h6>Call 0300 790 9980 to pay a fine in Wales</h6>
+
+        <button onclick="changeLanguage('eng')">
+          Change to English</button>
+        <button onclick="changeLanguage('es')">
+          Change to Spanish
+        </button>
+        <button onclick="changeLanguage('fr')">
+          Change to French
+        </button>
+
+          <!-- Define the content of the page that would be changed -->
+
+  </main>
+  
+  
+  <script>
+    // Create a function to change
+    // the hash value of the page
+    function changeLanguage(lang) {
+      location.hash = lang;
+      location.reload();
+    }
+  
+    // Define the language reload anchors
+    var language = {
+
+      es: {
+         hd1: "Pagar una multa por licencia de televisión",
+         tx1: "Puede pagar una multa por licencia de televisión en línea o por teléfono",
+         hd2: "Cómo pagar",
+         hd3: "Pago en línea",
+         btn: "Pagar en línea"
+      },
+      fr: {
+        te: "French"
+      }
+    };
+
+    // Check if a hash value exists in the URL
+    if (window.location.hash) {
+  
+      // Set the content of the webpage 
+      // depending on the hash value
+      if (window.location.hash == "#es") {
+          hd1.textContent = language.es.hd1;
+          tx1.textContent = language.es.tx1;
+          hd2.textContent = language.es.hd2;
+          hd3.textContent = language.es.hd3;
+
+          btn.textContent = language.es.btn;
+      }
+      else if (window.location.hash == "#fr") {
+        te.textContent = language.fr.te;
+      }
+    }
+  </script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
