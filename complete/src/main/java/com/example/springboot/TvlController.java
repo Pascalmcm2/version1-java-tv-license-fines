@@ -69,12 +69,35 @@ public class TvlController {
 	@PostMapping("/pay")
 	public String pay(Model model, @RequestParam String id) {
 
+		boolean secondRun = false;
+
 		// Let's assume every payment is a good payment
 		int fineId = Integer.parseInt(id);
 		List<String> fine = TvlRepository.getById(fineId);
-		fine.set(8, "PAID");
+		if (fine.get(9) == "PAID"){
+			fine.set(6, "£200");
+			fine.set(8, "PAID");
+			secondRun = true;
+		}
+		//fine.set(8, "PAID");
+		if (secondRun == false){
+		fine.set(6, "£100");
+		fine.set(9, "PAID");
+		}
 
-		return "redirect:fines";
+		return "redirect:confirm";
 	}
+
+	@GetMapping("/confirm")
+	public String confirm() {
+		return "confirm";
+	}
+
+
+	@GetMapping("/exit")
+	public String exit() {
+		return "exit";
+	}
+
 
 }
