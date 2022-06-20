@@ -52,8 +52,9 @@
                         <input type="hidden" th:value="${fine[0]}" name="id">
                         <div class="row">
                             <div class="form-group col-sm-1">
-                            <label for="amount">Amount</label>
-                            <input type="text" class="form-control border border-dark rounded-0" name="owner" id="owner" value="£">
+                                <label for="amount">Pay £</label>
+                                <input th:if="${fine[9]  == 'UNPAID'}" type="text" class="form-control border border-dark rounded-0" name="owner" id="owner" value="" required="required" pattern="100" title="Too high, you currently owe £200.">
+                                <input th:if="${fine[9]  == 'PAID'}" type="text" class="form-control border border-dark rounded-0" name="owner" id="owner" value="" required="required" pattern="100" title="Too high, you currently owe £100.">
                             </div>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
