@@ -56,7 +56,7 @@
                       <p><span class="font-weight-bold">Date to respond by: </span><span th:text="' ' + ${row[7]}"></span></p>
                       <hr style="width:50%;text-align:left;margin-left:0;">
                       <a th:if="${row[8] == 'UNPAID'}" th:href="@{/fine(id=${row[0]})}" class="btn btn-success border border-dark rounded-0">Pay now</a>
-                      <div th:unless="${row[8] == 'UNPAID'}" class="alert alert-secondary" role="alert">Thank you, this fine has been paid.</div>
+                      <div th:unless="${row[8] == 'UNPAID'}" class="alert alert-success" role="alert">Thank you for paying your TV Licence fine.</div>
                   </div>
               </div>
           </div>
