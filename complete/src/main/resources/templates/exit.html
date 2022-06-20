@@ -62,46 +62,68 @@
    <h2 class="mt-5" ><b id="hd1">Thank you for using this service</b></h2> <br>
    <p id="tx1">You have been logged out successfully</p> <br>
 
-   <a href="/">Click here to return to the home page </a>
+   <a href="/"><p id="ln1">Click here to return to the home page</p> </a>
   
 
   </main>
   
   
-  <script>
-    // Create a function to change
-    // the hash value of the page
+  <script> 
+    // Function to change the hash value of the page to the language
     function changeLanguage(lang) {
       location.hash = lang;
       location.reload();
     }
   
-    // Define the language reload anchors
+    // Language reload anchors
     var language = {
 
       es: {
          hd1: "Gracias por utilizar este servicio",
          tx1: "Ha cerrado la sesión con éxito",
-         tx2: "Pulse aquí para volver a la página de inicio"
+         ln1: "Pulse aquí para volver a la página de inicio"
       },
       fr: {
-        te: "French"
+        hd1: "Merci d'utiliser ce service",
+        tx1: "Vous avez été déconnecté avec succès",
+        ln1: "Cliquez ici pour retourner à la page d'accueil"
       }
     };
 
     // Check if a hash value exists in the URL
     if (window.location.hash) {
   
-      // Set the content of the webpage 
-      // depending on the hash value
+      // Setting the content of the page depending on the hash value
       if (window.location.hash == "#es") {
           hd1.textContent = language.es.hd1;
           tx1.textContent = language.es.tx1;
-          tx2.textContent = language.es.tx2;
+          ln1.textContent = language.es.ln1;
       }
       else if (window.location.hash == "#fr") {
-        te.textContent = language.fr.te;
+        hd1.textContent = language.fr.hd1;
+        tx1.textContent = language.fr.tx1;
+        ln1.textContent = language.fr.ln1;
       }
+    }
+  </script>
+
+  <script>
+       function changeLanguage(lang) {
+      location.hash = lang;
+      location.nextPage();
+
+      if (window.location.hash) {
+  
+  // Set the content of the webpage 
+  // depending on the hash value
+ // if (window.location.hash == "#es") {
+//      location.nextPage = <a href="/index/#es">
+ // }
+//  else if (window.location.hash == "#fr") {
+ //   hd1.textContent = language.fr.hd1;
+  //}
+}
+
     }
   </script>
 

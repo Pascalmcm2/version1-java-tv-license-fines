@@ -17,8 +17,11 @@
       }
 
       .footer > .container {
-        padding-right: 15px;
-        padding-left: 15px;
+        border-top: 1px solid #b1b4b6;
+        color: #0b0c0c;
+        background: #f3f2f1;
+        margin-right: auto;
+        margin-left: auto;
       }
 
       code {
@@ -60,15 +63,14 @@
 
 
     <div class="card text-white bg-info mb-3" style="max-width: 50 rem;">
-      <div class="card-header">Keep your information safe</div>
+      <div class="card-header" id="cd1">Keep your information safe</div>
       <div class="card-body">
-
-        <p class="card-text">Do not share your Government Gateway user ID and password with anyone else.</p>
+        <p class="card-text" id="cd2">Do not share your Government Gateway user ID and password with anyone else.</p>
       </div>
     </div>
     
 
-    <h1 class="mt-5"><b>Sign in using Government Gateway</b></h1> <br>
+    <h1 class="mt-5"><b id="hd1">Sign in using Government Gateway</b></h1> <br>
     <div class="row">
       <div class="col-6">
         <form th:attr="action='/fines'" method="post">
@@ -88,15 +90,70 @@
         
           <a href="https://www.access.service.gov.uk/registration/email">Create sign in details </a>
 
-
         </form>
       </div>
     </div>
+    <!-- Footer -->
+
+    <div class="mt-5 pt-5 pb-5 footer">
+      <div class="container" >
+        <div class="row">
+          <div class="col-lg-5 col-xs-12">
+            <p class="pr-5 text-black-50" id="ft1">Click the links to find out more information </p> 
+          </div>
+
+          <div class="col-lg-3 col-xs-12 links">
+              <ul class="m-0 p-0">
+                <li><a href="https://www.gov.uk/help">Help</a></li>
+                <li><a href="https://www.gov.uk/help/privacy-notice">Privacy</a></li>
+                <li><a href="https://www.gov.uk/help/accessibility-statement">Accessibility statement</a></li>
+              </ul>
+          </div>
+
+          <div class="col-lg-4 col-xs-12 location">
+          </div>
+          All content is available under the 
+          <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"> Open Government Licence v3.0</a>, except where otherwise stated
+          
+            <div class="float-lg-right">
+              <a href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"> © Crown Copyright
+              </a> 
+          </div>
+
+          </div>
+        </div>
+      </div>
   </main>
 
-</div>
+  <script>
+    // Create a function to change the hash value of the page to language
+    function changeLanguage(lang) {
+      location.hash = lang;
+      location.reload();
+    }
+  
+    // Define the language text
+    var language = {
 
+      es: {
+        // Future - make this into an string array to add the ids into es-array
+         hd1: "Iniciar sesión con el Portal del Gobierno",  
+         cd1: "Mantenga su información segura",
+         cd2: "No comparta su ID de usuario y contraseña del Portal del Gobierno con nadie más."
+      }
+    };
 
+    if (window.location.hash) {
+  
+  // Set the content of the webpage depending on the hash value
+  if (window.location.hash == "#es") {
+    // Future - for statement that goes through the es-array [i] = hd1 eliminate the .textcontent
+      hd1.textContent = language.es.hd1;
+      cd1.textContent = language.es.cd1;
+      cd2.textContent = language.es.cd2;
+  }
+}
+</script>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="

@@ -29,6 +29,11 @@ public class TvlController {
 		return "index";
 	}
 
+	@PostMapping("/index#es")
+	public String indexlang() {
+		return "index#es";
+	}
+
 	@PostMapping("/fines")
 	public String fines(Model model, TvlUser user, @RequestParam String email) {
 		TvlRepository.getByEmail(email);
