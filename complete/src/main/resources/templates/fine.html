@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Todo - New Todo</title>
+    <title>TV Licence fine information</title>
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -151,6 +151,13 @@
                        <!-- <button th:if="${fine[5] > fine[6]}" type="submit" th:href="@{/pay(id=${index})}" class="btn btn-success border border-dark rounded-0">Confirm Payment</button> -->
                         <button th:if="${fineAge > 28}" type="submit" th:href="@{/pay(id=${index})}" class="btn btn-success border border-dark rounded-0">Confirm Payment</button>
                         <button th:unless="${fineAge > 28}" type="submit" th:href="@{/pay(id=${index})}" class="btn btn-success border border-dark rounded-0">Pay &#163;65</button>
+
+                        <hr>
+
+                        <div class="d-flex flex-wrap align-items-center">
+                            <right> <img th:src="@{../images/global1.png}" width="15%" height="15%" /> </div></right>
+                         </div>
+
                     </div>
                 </form> 
             </div>
