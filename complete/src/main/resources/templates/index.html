@@ -38,12 +38,15 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <a class="navbar-brand" href="/">GOV.UK</a>
 
-      <label for="lang"></label>
-      <select name="lang" id="chooser">
-        <option value="eng"onclick="changeLanguage('eng')">English</option>
-        <option value="sp" onclick="changeLanguage('es')">Spanish</option>
-        <option value="fr"onclick="changeLanguage('fr')">French</option>
-      </select> 
+      <!-- Language Chooser Dropdown -->
+      <label for="lang">
+        <select name="lang" id="chooser">
+          <option value="eng"onclick="changeLanguage('eng')">English</option>
+          <option value="sp" onclick="changeLanguage('es')">Spanish</option>
+          <option value="fr"onclick="changeLanguage('fr')">French</option>
+          <option value="we"onclick="changeLanguage('we')">Welsh</option>
+        </select> 
+      </label>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

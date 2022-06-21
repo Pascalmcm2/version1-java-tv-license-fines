@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <title>Cofirmation of ayment</title>
+    <title>Confirmation of payment</title>
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -46,9 +46,6 @@ table.customTable thead {
   background-color: #B8C4F8;
 }
 
-
-
-
 .footer > .container {
               border-top: 1px solid #b1b4b6;
               color: #0b0c0c;
@@ -56,13 +53,6 @@ table.customTable thead {
               margin-right: auto;
               margin-left: auto;
             }
-      
-
-
-
-
-
-
 
     </style>
 </head>
@@ -77,12 +67,15 @@ table.customTable thead {
 
       <a class="navbar-brand" style="right: 5px; position: absolute" href="/exit">LOGOUT</a>
 
-      <label for="lang"></label>
-      <select name="lang" id="chooser">
-        <option value="eng"onclick="changeLanguage('eng')">English</option>
-        <option value="sp" onclick="changeLanguage('es')">Spanish</option>
-        <option value="fr"onclick="changeLanguage('fr')">French</option>
-      </select> 
+      <!-- Language Chooser Dropdown -->
+      <label for="lang">
+        <select name="lang" id="chooser">
+          <option value="eng"onclick="changeLanguage('eng')">English</option>
+          <option value="sp" onclick="changeLanguage('es')">Spanish</option>
+          <option value="fr"onclick="changeLanguage('fr')">French</option>
+          <option value="we"onclick="changeLanguage('we')">Welsh</option>
+        </select> 
+      </label>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
