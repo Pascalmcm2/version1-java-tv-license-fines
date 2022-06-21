@@ -78,20 +78,20 @@
       <div class="col-6">
         <form th:attr="action='/fines'" method="post">
           <div class="form-group">
-            <label for="exampleInputEmail1">Government Gateway user ID</label>
+            <label for="exampleInputEmail1" id="tx1">Government Gateway user ID</label>
             <input type="email" class="form-control border border-dark rounded-0" name="email" id="email" value="" required>
           </div>
           <div class="form-group">
 
-            <label for="exampleInputPassword1">Password</label>
+            <label for="exampleInputPassword1" id="tx2">Password</label>
             <input type="password" class="form-control border border-dark rounded-0" name="password" id="password" value="" required >
         </div>
         
-          <button type="submit" class="btn btn-success border border-dark rounded-0">Sign in</button>
+          <button type="submit" class="btn btn-success border border-dark rounded-0" id="btn">Sign in</button>
 
-          <a href="https://www.gov.uk/guidance/ofsted-services-forgotten-your-government-gateway-user-id-and-password">Forgot ID or Password?</a> <br><br><br>
+          <a href="https://www.gov.uk/guidance/ofsted-services-forgotten-your-government-gateway-user-id-and-password" id="h1">Forgot ID or Password?</a> <br><br><br>
         
-          <a href="https://www.access.service.gov.uk/registration/email">Create sign in details </a>
+          <a href="https://www.access.service.gov.uk/registration/email" id ="h">Create sign in details </a>
 
         </form>
       </div>
@@ -142,8 +142,27 @@
         // Future - make this into an string array to add the ids into es-array
          hd1: "Iniciar sesión con el Portal del Gobierno",  
          cd1: "Mantenga su información segura",
-         cd2: "No comparta su ID de usuario y contraseña del Portal del Gobierno con nadie más."
-      }
+         cd2: "No comparta su ID de usuario y contraseña del Portal del Gobierno con nadie más.",
+
+         tx1: "ID de usuario del Portal del Gobierno",
+         tx2: "Contraseña",
+         
+         btn: "Registrarse",
+         h: "Crear detalles de inicio de sesión",
+         h1: "¿Olvidó su identificación o contraseña?",
+
+        // Footer Start
+         tx7: "Todo el contenido está disponible bajo la", 
+         tx8: "Licencia de Gobierno Abierto v3.0",
+         tx9: ", salvo que se indique lo contrario",
+
+         ft1: "Haga clic en los enlaces para obtener más información",
+         ft2: "Ayuda",
+         ft3: "Privacidad",
+         ft4: "Declaración de accesibilidad",
+
+         // Footer End
+        }
     };
 
     if (window.location.hash) {
@@ -154,6 +173,26 @@
       hd1.textContent = language.es.hd1;
       cd1.textContent = language.es.cd1;
       cd2.textContent = language.es.cd2;
+
+      tx1.textContent = language.es.tx1;
+      tx2.textContent = language.es.tx2;
+
+      btn.textContent = language.es.btn;
+
+      h.textContent = language.es.h;
+      h1.textContent = language.es.h1;
+
+           // Footer Start
+          tx7.textContent = language.es.tx7;
+          tx8.textContent = language.es.tx8;
+          tx9.textContent = language.es.tx9;
+
+          ft1.textContent = language.es.ft1;
+          ft2.textContent = language.es.ft2;
+          ft3.textContent = language.es.ft3;
+          ft4.textContent = language.es.ft4;
+          // Footer End
+      
 
       document.getElementById("chooser").value = "sp";
   }
